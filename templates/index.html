@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Boggle</title>
+    <link rel="stylesheet" href="/static/boggle.css">
+  </head>
+  <body>
+    <section id="boggle">
+
+      <table class="board">
+        <tbody>
+          {% for row in board %}
+          <tr>
+            {% for data in row %}
+            <td>{{ data }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+
+      <form class="add-word">
+        <input name="word">
+        <button>Enter</button>
+      </form>
+
+      <ul class="words"></ul>     
+   
+
+    </section>
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+    <script src="/static/boggle.js"></script>
+    <script>let game = new BoggleGame("boggle");</script>
+  </body>
+</html>
