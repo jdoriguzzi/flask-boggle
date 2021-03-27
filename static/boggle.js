@@ -73,11 +73,11 @@ class BoggleGame {
     }
   }
 
-  /* end of game: score and update message. */
+  /* Handle end of game */
 
   async scoreGame() {
     $("#add-word", this.board).hide();
-    const resp = await axios.post("/post-score", { score: this.score });
+    const resp = await axios.post("/game-over", { score: this.score });
     if (resp.data.brokeRecord) {
       this.showMessage(`New record: ${this.score}`);
     } else {

@@ -32,9 +32,9 @@ def check_word():
     return jsonify({'result': response})
 
 
-@app.route("/post-score", methods=["POST"])
-def post_score():
-    """Receive score, update nplays, update high score if appropriate."""
+@app.route("/game-over", methods=["POST"])
+def game_over():
+    """Show final score and update highscore if new record."""
 
     score = request.json["score"]
     highscore = session.get("highscore", 0)
