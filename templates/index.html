@@ -12,20 +12,32 @@
           {% for row in board %}
           <tr>
             {% for data in row %}
-            <td>{{ data }}</td>
+            <td class="cell">{{ data }}</td>
             {% endfor %}
           </tr>
           {% endfor %}
         </tbody>
       </table>
 
+      <p>High Score: 
+        <b>{{ highscore }}</b><br>
+        in {{ plays }} plays<br>
+      </p>
 
-      <form class="add-word">
-        <input name="word">
+      <p>
+        Score: <b id="score">0</b><br>
+        Time Left: <b id="timer"></b>
+      </p>
+
+
+      <form id="add-word" method="POST">
+        <input name="word" class="word">
         <button>Enter</button>
       </form>
 
-      <ul class="words"></ul>     
+      <ul id="words"></ul>
+
+      <p id="msg"></p>
    
 
     </section>
